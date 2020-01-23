@@ -13,6 +13,8 @@ and running the main file will result in two .csv files, corresponding for each 
 
 ## Running the script
 
+First you need to download the Enron email dataset from the link above, and extract the root folder of the zip called 'maildir' to the root of the project. This is required in order for the script to work.
+
 There are two ways to run the script, using pipenv directly, or building a docker image that uses pipenv.
 Both ways require you to clone this repository first using
 
