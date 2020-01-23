@@ -40,7 +40,7 @@ After cloning the repository, go to the root of the repository and run the follo
 
 ```
 docker build -t challenge .
-docker run challenge
+docker run -v $(pwd)/output:/app/output -v $(pwd)/maildir:/app/maildir challenge
 ```
 
 After this, the output files are created to 'output' folder of this repository.
