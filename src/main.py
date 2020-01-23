@@ -7,9 +7,12 @@ import pandas as pd
 
 def main():
     """Launches the script as a standalone"""
-    if not (os.path.isdir("maildir")):
+    if not (os.path.isdir('./maildir')):
         print("The required folder seems to be missing from the working folder!")
         print("Download it from https://www.cs.cmu.edu/~./enron/")
+        sys.exit()
+    if not (os.path.isdir('./output')):
+        print('You need to have and empty folder named "output" in the root of the project!')
         sys.exit()
     filenames = find_filenames('./maildir', simplified1=True)
     sender_to_recipient(filenames)
