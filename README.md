@@ -16,7 +16,9 @@ and running the main file will result in two .csv files, corresponding for each 
 First you need to download the Enron email dataset from the link above, and extract the root folder of the zip called 'maildir' to the root of the project. This is required in order for the script to work.
 
 There are two ways to run the script, using pipenv directly, or building a docker image that uses pipenv.
-Both ways require you to clone this repository first using
+Both ways take care of the dependencies, and no extra installing should be required if you have working versions of either two programs.
+
+Both ways require you to clone this repository first using:
 
 ```
 git clone git@github.com:laatopi/AktiaChallenge.git
