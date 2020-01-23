@@ -32,9 +32,6 @@ pipenv install
 pipenv run python src/main.py
 ```
 
-After this, the output files are created to '/output' folder of the repository.
-The cells of the outputted csv files are seperated by comma, so when opening them make sure that the correct seperator is selected.
-
 #### Running with Docker
 
 After cloning the repository, go to the root of the repository and run the following commands.
@@ -43,9 +40,16 @@ After cloning the repository, go to the root of the repository and run the follo
 docker build -t challenge .
 docker run -v $(pwd)/output:/app/output -v $(pwd)/maildir:/app/maildir challenge
 ```
+#### After running
+After running, the output files are created to 'output' folder of this repository.
+The cells of the outputted csv files are seperated by comma, so when opening them make sure that the correct seperator is selected.
 
-After this, the output files are created to 'output' folder of this repository.
+
 
 ## Comments and thoughts about the challenge
 
-lorem ipsum
+I used around 8 hours of time to do this project, divided to two days.
+The most confusing part was the second task in its entirety. 
+
+How I understood the task was to check the mean count of emails employee receives on average per weekday. But according to the data, and yes, I checked many times using many different methods, not a single employee received more than one email on a single calendar day. So every weekday average for every employee averages to 1. Counting the sums of emails received per weekday is not the average, so I figured the task couldnt be to calculate that. Getting a result where every value is 1 makes me think that I have misundersood the task, or that I messed something up, so this task ended being quite frustrating because of that.
+
