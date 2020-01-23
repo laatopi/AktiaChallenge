@@ -33,6 +33,7 @@ pipenv run python src/main.py
 ```
 
 After this, the output files are created to '/output' folder of the repository.
+The cells of the outputted csv files are seperated by comma, so when opening them make sure that the correct seperator is selected.
 
 #### Running with Docker
 
