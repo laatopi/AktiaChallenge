@@ -16,7 +16,9 @@ and running the main file will result in two .csv files, corresponding for each 
 First you need to download the Enron email dataset from the link above, and extract the root folder of the zip called 'maildir' to the root of the project. This is required in order for the script to work.
 
 There are two ways to run the script, using pipenv directly, or building a docker image that uses pipenv.
-Both ways require you to clone this repository first using
+Both ways take care of the dependencies, and no extra installing should be required if you have working versions of either two programs.
+
+Both ways require you to clone this repository first using:
 
 ```
 git clone git@github.com:laatopi/AktiaChallenge.git
@@ -32,19 +34,23 @@ pipenv install
 pipenv run python src/main.py
 ```
 
-After this, the output files are created to '/output' folder of the repository.
-
 #### Running with Docker
 
 After cloning the repository, go to the root of the repository and run the following commands.
 
 ```
 docker build -t challenge .
-docker run challenge
+docker run -v $(pwd)/output:/app/output -v $(pwd)/maildir:/app/maildir challenge
 ```
+#### After running
+After running, the output files are created to 'output' folder of this repository.
+The cells of the outputted csv files are seperated by comma, so when opening them make sure that the correct seperator is selected.
 
-After this, the output files are created to 'output' folder of this repository.
+
 
 ## Comments and thoughts about the challenge
 
-lorem ipsum
+I used around 8 hours of time to do this project, divided to two days.
+
+#### The confusion about task 2
+How I understood the task was to check the mean count of emails employee receives on average per weekday. But according to the data, after checking many times with many different ways, not a single employee received more than one email on a single calendar day. So every weekday average for every employee averages to 1. Counting the sums of emails received per weekday is not the average, so I figured the task couldnt be to calculate that. Getting a result where every value is 1 makes me think that I have misundersood the task, or that I messed something up, so this task ended being quite frustrating because of that. Still not sure if I got it right or understood the task correctly. The confusion and the analysis of this is seen in my code, commented on a big chunk.
