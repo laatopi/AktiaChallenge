@@ -16,7 +16,7 @@ def main():
         sys.exit()
     filenames = find_filenames('./maildir', simplified1=True)
     sender_to_recipient(filenames)
-    filenames = find_filenames('./maildir', simplified2=False)
+    filenames = find_filenames('./maildir', simplified2=True)
     average_per_weekday(filenames)
 
 def sender_to_recipient(filenames):
