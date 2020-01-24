@@ -52,5 +52,4 @@ The cells of the outputted csv files are seperated by comma, so when opening the
 
 I used around 8 hours of time to do this project, divided to two days.
 
-#### The confusion about task 2
-How I understood the task was to check the mean count of emails employee receives on average per weekday. But according to the data, after checking many times with many different ways, not a single employee received more than one email on a single calendar day. So every weekday average for every employee averages to 1. Counting the sums of emails received per weekday is not the average, so I figured the task couldnt be to calculate that. Getting a result where every value is 1 makes me think that I have misundersood the task, or that I messed something up, so this task ended being quite frustrating because of that. Still not sure if I got it right or understood the task correctly. The confusion and the analysis of this is seen in my code, commented on a big chunk.
+The task was fun but at the sametime at times difficult.
