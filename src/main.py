@@ -16,7 +16,7 @@ def main():
         sys.exit()
     filenames = find_filenames('./maildir', simplified1=True)
     sender_to_recipient(filenames)
-    filenames = find_filenames('./maildir', simplified2=True)
+    filenames = find_filenames('./maildir', simplified2=False)
     average_per_weekday(filenames)
 
 def sender_to_recipient(filenames):
@@ -55,7 +55,8 @@ def average_per_weekday(filenames):
         day = day.group(1).lower()
         date = re.search(r',(.+?):', content['Date'])
         date = date.group(1)[:-3]
-        dictionary[(employee, maps[day], date)] = dictionary.get((employee, maps[day]), 0) + 1
+        dictionary[(employee, maps[day], date)] = dictionary.get((employee, maps[day], date), 0) + 1
+        
     df = pd.DataFrame(list(dictionary.items()), columns=['e', 'avg_count'])
     df[['employee', 'day_of_week', 'date']] = pd.DataFrame(df['e'].tolist(), index=df.index)
     df = df[['employee', 'day_of_week', 'date', 'avg_count']]
