@@ -63,15 +63,6 @@ def average_per_weekday(filenames):
     df.sort_values(by=['employee', 'day_of_week'], inplace=True)
     df['avg_count'] = pd.to_numeric(df['avg_count']) 
     df = df.groupby(['employee', 'day_of_week']).agg(avg_count=('avg_count', 'mean')).reset_index()
-
-    """
-    # Sanity check to see if the avg_counts of each column really is 1 by checking the file manually:
-    df = df.groupby(['employee', 'day_of_week']).agg(Sum=('avg_count', 'sum'), Count=('avg_count', 'count'))
-    print(df['Sum'].equals(df['Count']))
-    # Its true, even when taking all files into account.
-    # This means that according to the data, no single employee has received more than one mail per day.
-    """
-
     df.to_csv(r'./output/emails_sent_average_per_weekday.csv', index = None, header=True)
     print('Saved results to ./output/emails_sent_average_per_weekday.csv')
 
