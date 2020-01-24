@@ -50,6 +50,6 @@ The cells of the outputted csv files are seperated by comma, so when opening the
 
 ## Comments and thoughts about the challenge
 
-I used around 8 hours of time to do this project, divided to two days.
+I used around 8 hours of time to do this project, divided to two days, and I also did a really quick bugfix after the initial return on the code that delivers the result of task 2.
 
 The task was fun but at the sametime at times difficult.
